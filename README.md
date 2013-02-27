@@ -26,7 +26,9 @@ rhc initializes your application using this repository as a baseline.
 ###Step 3. Configure environment variables on the app gear###
 The example code uses ```mongodb://localhost:27017/test``` when the MONGOLAB_URI environment variable is not available. This is sufficient for testing locally with your own mongodb, but not for production.
 
-If you prefer, you can store the URI value you obtained in Step 2 in your code. However, we find that configuring this value outside of the code (and not storing it in a repository) allows for maximum security and flexibility.
+**Note:** We find that configuring this value outside of the code (and not storing it in a repository) allows for maximum security and flexibility. However, there are repository-driven alternatives for configuring this environment variable that may meet your requirements. See [how to create and use environment variables on the server](https://openshift.redhat.com/community/kb/kb-e1072-how-to-create-and-use-environment-variables-on-the-server) for more information.
+
+To configure your environment variable without placing credentials in a repository:
 
 1. Login to [http://openshift.redhat.com](http://openshift.redhat.com/)
 1. Click **My Apps**.
