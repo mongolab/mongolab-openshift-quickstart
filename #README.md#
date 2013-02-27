@@ -1,4 +1,4 @@
-MongoLab OpenShift Quickstart (Node.js and MongoDB)
+https://openshift.redhat.com/community/kb/kb-e1072-how-to-create-and-use-environment-variables-on-the-serverMongoLab OpenShift Quickstart (Node.js and MongoDB)
 -----------------------------
 
 ###Step 1. Create an OpenShift account and application###
@@ -36,7 +36,7 @@ If you prefer, you can store the URI value you obtained in Step 2 in your code. 
 1. Create a new file, ```~/nodejs-0.6/conf/node.env```, in your editor of choice.
 1. Add the line ```export MONGOLAB_URI=<db uri>``` where **<db uri>** is the mongodb URI you obtained in Step 2, with your database user credentials added.
 
-###Step 4. Commit and deploy the app###
+###Step 3. Commit and deploy the app###
 When you created your app, the rhc command line client automatically initialized a git repo with a remote link to OpenShift. From your app directory:
 
 ```
