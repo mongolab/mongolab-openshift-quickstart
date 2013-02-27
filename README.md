@@ -8,7 +8,7 @@ Create an account at [http://openshift.redhat.com](http://openshift.redhat.com/)
 Once rhc is installed, create a **nodejs-0.6** application using the path to this repository as the ```--from-code``` argument and by replacing <app name> with your desired application name:
 
 ```
-> rhc app create <app name> nodejs-0.6 --from-code https://mongolab.com/openshift/mongolab-openshift-quickstart
+> rhc app create <app name> nodejs-0.6 --from-code https://github.com/mongolab/mongolab-openshift-quickstart
 > cd <app name>
 ```
 rhc initializes your application using this repository as a baseline.
