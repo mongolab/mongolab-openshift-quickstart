@@ -1,0 +1,33 @@
+{
+  "name": "MongoLab-OpenShift-Quickstart",
+  "version": "1.0.0",
+  "description": "OpenShift Sample Application using Node.js and a MongoLab-hosted MongoDB",
+  "keywords": [
+    "OpenShift",
+    "Node.js",
+    "application",
+    "openshift",
+    "mongodb",
+    "mongolab"
+  ],
+  "author": {
+    "name": "MongoLab",
+    "email": "support@mongolab.com",
+    "url":  "http://www.mongolab.com"
+  },
+  "homepage": "http://openshift.redhat.com/",
+  "repository": {
+    "type": "git",
+    "url": "https://gitub.com/mongolab/mongolab-openshift-quickstart"
+  },
+  "engines": {
+    "node": ">= 0.6.0"
+  },
+  "dependencies": {
+    "express": "3.x.x",
+    "mongodb": "1.2.x",
+    "ejs": "0.8.x"
+  },
+  "private": true,
+  "main": "server.js"
+}
