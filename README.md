@@ -24,7 +24,9 @@ rhc initializes your application using this repository as a baseline.
 1. Copy this value somewhere helpful and replace placeholders with your database user credentials.
 
 ###Step 3. Commit and deploy the app###
-When you created your app, the rhc command line client automatically initialized a git repo with a remote link to OpenShift. From your app directory:
+When you created your app, the rhc command line client automatically initialized a git repo with a remote link to OpenShift. The code is also already deployed to your app gear.
+
+If you don't make any changes, you can skip this step. However, if you make any modifications (now or later), perform the following to update the code on the gear:
 
 ```
     git add .
