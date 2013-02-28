@@ -23,7 +23,16 @@ rhc initializes your application using this repository as a baseline.
 ```
 1. Copy this value somewhere helpful and replace placeholders with your database user credentials.
 
-###Step 3. Configure environment variables on the app gear###
+###Step 3. Commit and deploy the app###
+When you created your app, the rhc command line client automatically initialized a git repo with a remote link to OpenShift. From your app directory:
+
+```
+    git add .
+    git commit -m "my first commmit"
+    git push
+```
+
+###Step 4. Configure environment variables on the app gear###
 The example code uses ```mongodb://localhost:27017/test``` when the MONGOLAB_URI environment variable is not available. This is sufficient for testing locally with your own mongodb, but not for production.
 
 **Note:** We find that configuring this value outside of the code (and not storing it in a repository) allows for maximum security and flexibility. However, there are repository-driven alternatives for configuring this environment variable that may meet your requirements. See [how to create and use environment variables on the server](https://openshift.redhat.com/community/kb/kb-e1072-how-to-create-and-use-environment-variables-on-the-server) for more information.
@@ -39,15 +48,7 @@ To configure your environment variable without placing credentials in a reposito
 1. Add the line ```export MONGOLAB_URI=<db uri>``` where **db uri** is the mongodb URI you obtained in Step 2, with your database user credentials added.
 1. After editing the file, run ```source ~/app-root/data/.bash_profile```
 1. Use ```echo $MONGOLAB_URI``` to confirm success. The value you added should be displayed at the console.
-
-###Step 4. Commit and deploy the app###
-When you created your app, the rhc command line client automatically initialized a git repo with a remote link to OpenShift. From your app directory:
-
-```
-    git add .
-    git commit -m "my first commmit"
-    git push
-```
+1. Restart your app by running ```ctl_all stop``` then ```ctl_all start```.
 
 ###Step 5. View the app###
 
