@@ -35,7 +35,7 @@ To configure your environment variable without placing credentials in a reposito
 1. Click the **>** next to your app name to reach your application page.
 1. Click **Want to log in to your application?**
 1. Copy the provided ssh shell command to a shell window and press enter to ssh to your app gear.
-1. Open your gear's .bash_profile at, ```~/app-root/data/.bash_profile```, in your editor of choice.
+1. Open your gear's .bash_profile in your text editor of choice. It is located at ```~/app-root/data/.bash_profile```.
 1. Add the line ```export MONGOLAB_URI=<db uri>``` where **db uri** is the mongodb URI you obtained in Step 2, with your database user credentials added.
 1. After editing the file, run ```source ~/app-root/data/.bash_profile```
 1. Use ```echo $MONGOLAB_URI``` to confirm success. The value you added should be displayed at the console.
