@@ -7,6 +7,7 @@ var ejs = require('ejs');
 var http = require('http');
 
 var app = express();
+app.use(express.static(__dirname + '/public'));
 app.set('view engine', 'ejs');
 app.get('/', function(req, res) {
         db.collection('example').find().toArray(function (err, items) {
@@ -45,7 +46,8 @@ function seedDatabase(cb){
 	    if (err) {
 		console.error('Failed to clean example collection from database:\n' + err);
 	    } else {
-		db.collection('example').insert([{'tip': 'If you don\'t want to use EJS for dynamic content, replace it with your chosen template engine.'},
+		db.collection('example').insert([{'salutation': 'Congrats from MongoLab. Thanks for using our OpenShift Quickstart!'},
+						 {'tip': 'If you don\'t want to use EJS for dynamic content, replace it with your chosen template engine.'},
 						 {'tip': 'There\'s not much query logic here. Better add some features and forms!'},
 						 {'tip': 'Choose your DB by changing the MONGOLAB_URI env variable on your app gear.'},
 						 {'salutation': 'Congrats from MongoLab. Thanks for using our OpenShift Quickstart!'}],

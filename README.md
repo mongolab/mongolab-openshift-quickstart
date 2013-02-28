@@ -35,8 +35,10 @@ To configure your environment variable without placing credentials in a reposito
 1. Click the **>** next to your app name to reach your application page.
 1. Click **Want to log in to your application?**
 1. Copy the provided ssh shell command to a shell window and press enter to ssh to your app gear.
-1. Create a new file, ```~/nodejs-0.6/conf/node.env```, in your editor of choice.
+1. Open your gear's .bash_profile at, ```~/app-root/data/.bash_profile```, in your editor of choice.
 1. Add the line ```export MONGOLAB_URI=<db uri>``` where **<db uri>** is the mongodb URI you obtained in Step 2, with your database user credentials added.
+1. After editing the file, run ```source ~/app-root/data/.bash_profile```
+1. Use ```echo $MONGOLAB_URI``` to confirm success.
 
 ###Step 4. Commit and deploy the app###
 When you created your app, the rhc command line client automatically initialized a git repo with a remote link to OpenShift. From your app directory:
