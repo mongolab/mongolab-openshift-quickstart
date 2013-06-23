@@ -19,8 +19,8 @@ app.get('/', function(req, res) {
         });
 });
 
-var serverIp = process.env.OPENSHIFT_INTERNAL_IP || '127.0.0.1';
-var serverPort = process.env.OPENSHIFT_INTERNAL_PORT || 8080;
+var serverIp = process.env.OPENSHIFT_NODEJS_IP || '127.0.0.1';
+var serverPort = process.env.OPENSHIFT_NODEJS_PORT || 8080;
 var dbUri = process.env.MONGOLAB_URI || 'mongodb://localhost:27017/test';
 var db;
 var server;
