@@ -37,7 +37,7 @@ If you don't make any changes, you can skip this step. However, if you make any 
 ###Step 4. Configure environment variables on the app gear###
 The example code uses ```mongodb://localhost:27017/test``` when the MONGOLAB_URI environment variable is not available. This is sufficient for testing locally with your own mongodb, but not for production.
 
-**Note:** We find that configuring this value outside of the code (and not storing it in a repository) allows for maximum security and flexibility. However, there are repository-driven alternatives for configuring this environment variable that may meet your requirements. See [Custom Environment Variables](https://www.openshift.com/blogs/new-online-features-for-september-2013) for more information.
+**Note:** Though there are repository-driven methods for configuring this environment variable that meet your requirements, we find that configuring this value outside of the code (and not storing it in a repository) allows for maximum security and flexibility. See [Custom Environment Variables](https://www.openshift.com/blogs/new-online-features-for-september-2013) for more information.
 
 To configure your environment variable without placing credentials in a repository:
 
