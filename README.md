@@ -37,20 +37,16 @@ If you don't make any changes, you can skip this step. However, if you make any 
 ###Step 4. Configure environment variables on the app gear###
 The example code uses ```mongodb://localhost:27017/test``` when the MONGOLAB_URI environment variable is not available. This is sufficient for testing locally with your own mongodb, but not for production.
 
-**Note:** Though there are repository-driven methods for configuring this environment variable that meet your requirements, we find that configuring this value outside of the code (and not storing it in a repository) allows for maximum security and flexibility. See [Custom Environment Variables](https://www.openshift.com/blogs/new-online-features-for-september-2013) for more information.
+Fortunately, the rhc client allows you to configure your environment variable without placing credentials in a repository (see [Custom Environment Variables](https://www.openshift.com/blogs/new-online-features-for-september-2013) for more information). Use the following commands configure your production URI and restart your app.
 
-To configure your environment variable without placing credentials in a repository:
+```
+    rhc env set MONGOLAB_URI='<db uri>' --app <app name>
+    rhc app restart --app <app name>
+```
 
-1. Login to [http://openshift.redhat.com](http://openshift.redhat.com/)
-1. Click **My Apps**.
-1. Click the **>** next to your app name to reach your application page.
-1. Click **Want to log in to your application?**
-1. Copy the provided ssh shell command to a shell window and press enter to ssh to your app gear.
-1. Open your gear's .bash_profile in your text editor of choice. It is located at ```~/app-root/data/.bash_profile```.
-1. Add the line ```export MONGOLAB_URI=<db uri>``` where **db uri** is the mongodb URI you obtained in Step 2, with your database user credentials added.
-1. After editing the file, run ```source ~/app-root/data/.bash_profile```
-1. Use ```echo $MONGOLAB_URI``` to confirm success. The value you added should be displayed at the console.
-1. Restart your app by running ```ctl_all stop``` then ```ctl_all start```.
+**db uri** is the mongodb URI you obtained in Step 2, with your database user credentials added.
+
+**Note:** Though there are repository-driven methods for configuring this environment variable that meet your requirements, we find that configuring this value outside of the code (and not storing it in a repository) allows for maximum security and flexibility.
 
 ###Step 5. View the app###
 
